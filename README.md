@@ -1,8 +1,6 @@
 # SongHub Backend
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+This is the backend solution for the SongHub application.
 
 ## Installation
 
