@@ -14,7 +14,7 @@ export class ManagementController {
 		@Body('length') length: number,
 		@UploadedFile() file
 	): object {
-		if (file.originalname.split('.').pop() in [ 'mp3', 'mp4' ]) {
+		if (file.originalname.split('.').pop() === 'mp4' || file.originalname.split('.').pop() === 'mp3') {
 			const res = this.songService.insertSong(name, artist, length, file)
 			return res
 		} else {
