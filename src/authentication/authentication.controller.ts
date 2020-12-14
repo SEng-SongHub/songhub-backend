@@ -1,19 +1,20 @@
-import { Body, Controller, Get, Param, Post, UseInterceptors } from '@nestjs/common'
-import { FileInterceptor } from '@nestjs/platform-express'
+import { Body, Controller, Post } from '@nestjs/common'
 import { AuthenticationService } from './authentication.service'
-import { AnyMxRecord } from 'dns';
+import { AccountDto } from './account.dto'
 
-@Controller('authentication')
+@Controller('auth')
 export class AuthenticationController {
-	constructor (private readonly authenticationService: AuthenticationService) {}
+  constructor (private readonly authenticationService: AuthenticationService) {}
 
-	@Post('login')
-	login (
-		@Body('email') email: string,
-		@Body('password') password: string
-	): any {
-        const res = this.authenticationService.login(email, password)
-        return res 
-    }
+  @Post('login')
+  login (@Body('email') email: string, @Body('password') password: string): any {
+    const res = this.authenticationService.login(email, password)
+    return res
+  }
 
+  @Post('register')
+  register (@Body() account: AccountDto): object {
+    const res = this.authenticationService.register(account)
+    return res
+  }
 }
