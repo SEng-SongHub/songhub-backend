@@ -1,10 +1,10 @@
 export class Song {
-	constructor (
+	constructor(
 		public id: string,
 		public name: string,
 		public artist: string,
-		public length: number,
-		public file: any,
+		public album: string,
+		public file: string,
 		public likes: number
-	) {}
+	) { }
 }

@@ -10,11 +10,9 @@ import { AuthenticationModule } from './authentication/authentication.module'
 	imports: [
 		ManagementModule,
 		AuthenticationModule,
-		ServeStaticModule.forRoot({
-			rootPath: join(__dirname, '..', 'static')
-		})
+		ServeStaticModule.forRoot({ rootPath: join(__dirname, '..', 'static') })
 	],
-	controllers: [ AppController ],
-	providers: [ AppService ]
+	controllers: [AppController],
+	providers: [AppService]
 })
-export class AppModule {}
+export class AppModule { }
